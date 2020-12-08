@@ -30,17 +30,18 @@
   },
   "rules": {
     "linebreak-style": "off",
-    "prettier/prettier": [
+    "prettier/prettier": ["error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/jsx-props-no-spreading": [
       "error",
       {
-        "singleQuote": true,
-        "parser": "flow",
-        "printWidth": 80,
-        "trailingComma": "es5",
-        "semi": true,
-        "jsxSingleQuote": true,
-        "useTabs": true,
-        "endOfLine": "auto"
+        "explicitSpread": "enforce",
+        "html": "enforce",
+        "custom": "enforce",
+        "exceptions": ["WrappedComponent"]
       }
     ]
   }
