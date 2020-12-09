@@ -30,6 +30,7 @@ const directoryReducer = (
 		case FETCH_DIRECTORY_FAILURE:
 			return {
 				...state,
+				isLoading: false,
 				error: action.payload.error,
 			};
 		default:
