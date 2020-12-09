@@ -18,7 +18,7 @@ export async function getCollectionDataArray<T>(
       ? await collectionRef.orderBy(order).get()
       : await collectionRef.get();
   } catch (error) {
-    console.error("Error getting collection", error);
+    throw new Error(error);
   }
   if (snapShot) {
     // eslint-disable-next-line prettier/prettier
