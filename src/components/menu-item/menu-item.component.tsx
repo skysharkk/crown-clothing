@@ -13,11 +13,7 @@ const MenuItem: React.FC<Props> = ({
 }: Props) => {
 	return (
 		<div className={`menu-item menu-item_${size}`}>
-			<div
-				className='menu-item__background'
-				style={{ backgroundImage: `url(${imageUrl})` }}
-			/>
-
+			<img src={imageUrl} alt='background' className='menu-item__background' />
 			<Link className='menu-item__link' to={linkUrl}>
 				<div className='menu-item__title-container'>
 					<h2 className='menu-item__title'>{title.toUpperCase()}</h2>

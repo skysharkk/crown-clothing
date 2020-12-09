@@ -31,13 +31,14 @@ class ErrorBoundary extends Component<IProps, IState> {
 		const { hasError } = this.state;
 		if (hasError) {
 			return (
-				<div className='error-image'>
-					<div
-						className='error-image__container'
-						style={{ backgroundImage: 'url(https://i.imgur.com/yW2W9SC.png)' }}
+				<article className='error-image'>
+					<img
+						src='https://i.imgur.com/yW2W9SC.png'
+						alt='error'
+						className='error-image__image'
 					/>
 					<h2 className='error-image__title'>Sorry this page is broken</h2>
-				</div>
+				</article>
 			);
 		}
 		const { children } = this.props;

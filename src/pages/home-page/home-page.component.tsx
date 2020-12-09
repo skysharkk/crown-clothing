@@ -19,9 +19,9 @@ const HomePage: React.FC<Props> = ({ startAddDirectory }: Props) => {
 		startAddDirectory();
 	}, [startAddDirectory]);
 	return (
-		<div>
+		<section>
 			<DirectoryContainer />
-		</div>
+		</section>
 	);
 };
 

@@ -16,23 +16,25 @@ interface IStateProps {
 type Props = IStateProps;
 
 const Directory: React.FC<Props> = ({
-	directory: { directoryData },
+	directory: { directoryData, error },
 }: Props) => {
+	if (error) {
+		throw new Error(error);
+	}
 	return (
-		<div className='directory-container'>
-			{directoryData
-				? directoryData.map(({ id, imageUrl, linkUrl, size, title }) => (
-						<MenuItem
-							key={id}
-							id={id}
-							imageUrl={imageUrl}
-							linkUrl={linkUrl}
-							size={size}
-							title={title}
-						/>
-				  ))
-				: null}
-		</div>
+		<article className='directory-container'>
+			{directoryData &&
+				directoryData.map(({ id, imageUrl, linkUrl, size, title }) => (
+					<MenuItem
+						key={id}
+						id={id}
+						imageUrl={imageUrl}
+						linkUrl={linkUrl}
+						size={size}
+						title={title}
+					/>
+				))}
+		</article>
 	);
 };
 
