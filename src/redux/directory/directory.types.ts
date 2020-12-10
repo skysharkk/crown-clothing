@@ -20,18 +20,18 @@ export interface IDirectoryItemData {
 	title: string;
 }
 
-export interface IFetchDataStartAction {
+interface IFetchDataStartAction {
 	type: typeof FETCH_DIRECTORY_START;
 }
 
-export interface IFetchDataSuccessAction {
+interface IFetchDataSuccessAction {
 	type: typeof FETCH_DIRECTORY_SUCCESS;
 	payload: {
 		directoryData: DirectoryDataType | null,
 	};
 }
 
-export interface IFetchDataFailureAction {
+interface IFetchDataFailureAction {
 	type: typeof FETCH_DIRECTORY_FAILURE;
 	payload: {
 		error: string | null,
