@@ -5,13 +5,13 @@ import {
 } from './directory.constants';
 import { DirectoryFetchDataAction, IDirectoryState } from './directory.types';
 
-const INITIAL_STATE: IDirectoryState = {
+export const INITIAL_STATE: IDirectoryState = {
 	directoryData: null,
 	isLoading: true,
 	error: null,
 };
 
-const directoryReducer = (
+export const directoryReducer = (
 	state: IDirectoryState = INITIAL_STATE,
 	action: DirectoryFetchDataAction
 ): IDirectoryState => {
@@ -37,5 +37,3 @@ const directoryReducer = (
 			return state;
 	}
 };
-
-export default directoryReducer;

@@ -12,17 +12,17 @@ export async function getCollectionDataArray<T>(
   order = ""
 ): Promise<Array<T> | null> {
   const collectionRef = dataBase.collection(collectionName);
-  let snapShot;
+  let snapshot;
   try {
-    snapShot = order
+    snapshot = order
       ? await collectionRef.orderBy(order).get()
       : await collectionRef.get();
   } catch (error) {
     throw new Error(error);
   }
-  if (snapShot) {
+  if (snapshot) {
     // eslint-disable-next-line prettier/prettier
-    return snapShot.docs.map((doc) => doc.data() as T);
+    return snapshot.docs.map((doc) => doc.data() as T);
   }
   return null;
 }

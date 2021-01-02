@@ -3,18 +3,19 @@ import {
 	FETCH_COLLECTIONS_START,
 	FETCH_COLLECTIONS_SUCCESS,
 } from './collections.constants';
+
 import {
 	CollectionsFetchDataAction,
 	ICollectionsState,
 } from './collections.types';
 
-const INITIAL_STATE: ICollectionsState = {
+export const INITIAL_STATE: ICollectionsState = {
 	collectionsData: null,
 	isLoading: true,
 	error: null,
 };
 
-const collectionReducer = (
+export const collectionReducer = (
 	state = INITIAL_STATE,
 	action: CollectionsFetchDataAction
 ): ICollectionsState => {
@@ -41,5 +42,3 @@ const collectionReducer = (
 			return state;
 	}
 };
-
-export default collectionReducer;
